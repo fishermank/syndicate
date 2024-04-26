@@ -3,3 +3,8 @@
 logs/
 aws-syndicate/
 syndicate_venv/
+
+.idea
+target/
+**/target/
+/target/
