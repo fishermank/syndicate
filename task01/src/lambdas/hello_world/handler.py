@@ -13,10 +13,12 @@ class HelloWorld(AbstractLambda):
         """
         Explain incoming event here
         """
-        return {
-            "statusCode": 200,
-            "message": "Hello from Lambda"
-        }
+        print(event)
+        if event['rawPath'] == '/hello' and event['requestContext']['http']['method'] == 'GET':
+            return {
+                "statusCode": 200,
+                "message": "Hello from Lambda"
+            }
 
 
 HANDLER = HelloWorld()
