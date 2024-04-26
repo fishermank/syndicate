@@ -21,7 +21,7 @@ class HelloWorld(AbstractLambda):
             return {
                 "statusCode": 200,
                 "headers": {"Content-Type": "application/json"},
-                "body": json.dumps({"message": "Hello from Lambda"})
+                "body": {'statusCode': 200, 'message': 'Hello from Lambda'}
             }
         else:
             return {
