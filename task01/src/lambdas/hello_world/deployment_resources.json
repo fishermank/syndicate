@@ -1,5 +1,5 @@
 {
-  "lambda-task01-role": {
+  "hello_world-role": {
     "predefined_policies": [],
     "principal_service": "lambda",
     "custom_policies": [
