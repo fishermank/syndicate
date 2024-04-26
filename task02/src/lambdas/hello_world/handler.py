@@ -16,9 +16,16 @@ class HelloWorld(AbstractLambda):
         print(event)
         # if event['rawPath'] == '/hello' and event['requestContext']['http']['method'] == 'GET':
         if event['rawPath'] == '/hello':
+            print('------------good------------')
             return {
                 "statusCode": 200,
                 "message": "Hello from Lambda"
+            }
+        else:
+            print('------------bad------------')
+            return {
+                "statusCode": 500,
+                "message": "Bad response!"
             }
 
 
