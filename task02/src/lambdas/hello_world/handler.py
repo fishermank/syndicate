@@ -14,7 +14,8 @@ class HelloWorld(AbstractLambda):
         Explain incoming event here
         """
         print(event)
-        if event['rawPath'] == '/hello' and event['requestContext']['http']['method'] == 'GET':
+        # if event['rawPath'] == '/hello' and event['requestContext']['http']['method'] == 'GET':
+        if event['rawPath'] == '/hello':
             return {
                 "statusCode": 200,
                 "message": "Hello from Lambda"
