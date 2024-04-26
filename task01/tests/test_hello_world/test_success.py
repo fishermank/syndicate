@@ -1,7 +1,7 @@
-from tests.test_lambda_task01 import LambdaTask01LambdaTestCase
+from tests.test_hello_world import HelloWorldLambdaTestCase
 
 
-class TestSuccess(LambdaTask01LambdaTestCase):
+class TestSuccess(HelloWorldLambdaTestCase):
 
     def test_success(self):
         expected_value = {
@@ -10,4 +10,3 @@ class TestSuccess(LambdaTask01LambdaTestCase):
         }
 
         self.assertEqual(self.HANDLER.handle_request(dict(), dict()), expected_value)
-
