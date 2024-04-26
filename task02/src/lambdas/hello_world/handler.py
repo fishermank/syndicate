@@ -1,3 +1,5 @@
+import json
+
 from commons.log_helper import get_logger
 from commons.abstract_lambda import AbstractLambda
 
@@ -16,16 +18,16 @@ class HelloWorld(AbstractLambda):
         print(event)
         # if event['rawPath'] == '/hello' and event['requestContext']['http']['method'] == 'GET':
         if event['rawPath'] == '/hello':
-            print('------------good------------')
             return {
                 "statusCode": 200,
-                "message": "Hello from Lambda"
+                "headers": {"Content-Type": "application/json"},
+                "body": json.dumps({"message": "Hello from Lambda"})
             }
         else:
-            print('------------bad------------')
             return {
                 "statusCode": 500,
-                "message": "Bad response!"
+                "headers": {"Content-Type": "application/json"},
+                "body": json.dumps({"message": "Bad response!"})
             }
 
 
